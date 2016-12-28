@@ -7,5 +7,6 @@
         <file>adapters/qmldir</file>
         <file>stores/AppStore.qml</file>
         <file>stores/ApiStore.qml</file>
+        <file>stores/SearchResultsStore.qml</file>
     </qresource>
 </RCC>

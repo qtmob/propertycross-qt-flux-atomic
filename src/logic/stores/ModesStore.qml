@@ -12,7 +12,7 @@ QtObject {
         target: AppActions
         onShowSearchResults: d.currentMode = "results"
         onShowFavorites: d.currentMode = "favorites"
-        onSearchProperties: d.currentMode = ""
+        onShowPropertiesSearch: d.currentMode = ""
     }
 
     property QtObject d: QtObject {

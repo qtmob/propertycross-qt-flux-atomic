@@ -5,4 +5,5 @@ QtObject {
     property QtObject appStore
     property QtObject modesStore
     property QtObject apiStore
+    property QtObject searchResultsStore
 }

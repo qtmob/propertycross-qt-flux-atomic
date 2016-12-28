@@ -3,12 +3,14 @@ import QtQml 2.2
 
 QtObject {
 
-    // USER
-
-    signal searchProperties
+    signal showPropertiesSearch
     signal showSearchResults
     signal showPropertyDetails
     signal showFavorites
 
-    // SYSTEM
+    signal searchPropertiesByPlaceName(string place_name)
+    signal searchPropertiesByLocation(real lat, real lon)
+
+    signal gotSearchResults(var listings)
+    signal gotSearchError()
 }

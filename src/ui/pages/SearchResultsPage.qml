@@ -1,23 +1,20 @@
-import QtQuick 2.7
 import QtQuick.Controls 2.0
+import "../templates"
 import "../../logic/actions"
 import "../../logic/adapters"
 
-Item {
-    anchors.fill: parent
-    Text {
-        anchors.centerIn: parent
-        text: "search results"
-    }
-    Button {
-        id: btn
-        text: "Back"
-        onClicked: AppActions.searchProperties()
-    }
-    ItemDelegate {
-        anchors.top: btn.bottom
-        text: "Property 1"
-        width: parent.width
+SearchResultsTpl {
+    backButton.onClicked: AppActions.showPropertiesSearch()
+    searchResultsList.model: StoreTable.searchResultsStore.listingsModel
+    searchResultsList.delegate: ItemDelegate {
+        enabled: false
+        contentItem: Label {
+            text: "%1\n%2".arg(model.price_formatted).arg(model.title)
+            wrapMode: Label.Wrap
+            maximumLineCount: 2
+            elide: Label.ElideRight
+        }
+        width: searchResultsList.width
         onClicked: AppActions.showPropertyDetails()
     }
 }

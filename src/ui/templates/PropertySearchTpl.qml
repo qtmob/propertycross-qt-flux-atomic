@@ -5,8 +5,12 @@ import QtQuick.Controls 2.0
 Page {
     id: propertySearchTpl
 
+    property alias busyIndicator: busyIndicator
     property alias titleLabel: titleLabel
     property alias favoritesButton: favoritesButton
+    property alias searchInput: searchInput
+    property alias searchField: searchField
+    property alias clearSearchButton: clearSearchButton
     property alias searchButton: searchButton
     property alias locationButton: locationButton
     property alias searchProblem: searchProblem
@@ -27,7 +31,14 @@ Page {
         }
     }
 
+    BusyIndicator {
+        id: busyIndicator
+        visible: false
+        anchors.centerIn: parent
+    }
+
     ColumnLayout {
+        visible: !busyIndicator.visible
         anchors.fill: parent
         Pane {
             Layout.fillWidth: true
@@ -42,12 +53,25 @@ Page {
             id: searchPane
             Layout.fillWidth: true
             Layout.preferredHeight: 120
-            TextField {
-                id: searchField
+            RowLayout {
+                id: searchInput
+                signal clearSearch
+                onClearSearch: searchField.text = ""
                 width: parent.width
+                TextField {
+                    id: searchField
+                    Layout.fillWidth: true
+                }
+                Button {
+                    id: clearSearchButton
+                    Layout.preferredWidth: 40
+                    text: "X"
+                    onClicked: parent.clearSearch()
+                    enabled: searchField.displayText !== ""
+                }
             }
             Row {
-                anchors.top: searchField.bottom
+                anchors.top: searchInput.bottom
                 anchors.topMargin: 16
                 width: parent.width
                 spacing: 16

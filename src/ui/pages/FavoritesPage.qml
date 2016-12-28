@@ -11,7 +11,7 @@ Item {
     Button {
         id: back
         text: "Back"
-        onClicked: AppActions.searchProperties()
+        onClicked: AppActions.showPropertiesSearch()
     }
     ItemDelegate {
         anchors.top: back.bottom

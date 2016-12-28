@@ -1,5 +1,4 @@
 QT += core gui qml quick quickcontrols2
-CONFIG += console
 
 TEMPLATE = app
 
@@ -11,3 +10,5 @@ RESOURCES += \
     qml.qrc \
     ui/ui.qrc \
     logic/logic.qrc
+
+include(vendor/vendor.pri)

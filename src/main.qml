@@ -8,6 +8,9 @@ import "ui/pages"
 
 ApplicationWindow {
     id: qmlApp
+
+    property bool debugMode: false
+
     visible: true
     width: 320
     height: 480
@@ -15,6 +18,7 @@ ApplicationWindow {
     AppStore {}
     ModesStore {}
     ApiStore {}
+    SearchResultsStore {}
 
     DSM.StateMachine {
 
@@ -41,7 +45,7 @@ ApplicationWindow {
             onExited: searchResultsPage.visible = false
             DSM.SignalTransition {
                 targetState: propertySearchState
-                signal: AppActions.searchProperties
+                signal: AppActions.showPropertiesSearch
             }
             DSM.SignalTransition {
                 targetState: propertyListingState
@@ -67,7 +71,7 @@ ApplicationWindow {
             onExited: favoritesPage.visible = false
             DSM.SignalTransition {
                 targetState: propertySearchState
-                signal: AppActions.searchProperties
+                signal: AppActions.showPropertiesSearch
             }
             DSM.SignalTransition {
                 targetState: propertyListingState
@@ -94,6 +98,7 @@ ApplicationWindow {
     }
 
     Text {
+        visible: debugMode
         anchors.bottom: parent.bottom
         text: StoreTable.modesStore.currentMode
     }
