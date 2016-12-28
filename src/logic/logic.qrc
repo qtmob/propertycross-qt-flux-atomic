@@ -5,5 +5,7 @@
         <file>stores/ModesStore.qml</file>
         <file>adapters/StoreTable.qml</file>
         <file>adapters/qmldir</file>
+        <file>stores/AppStore.qml</file>
+        <file>stores/ApiStore.qml</file>
     </qresource>
 </RCC>

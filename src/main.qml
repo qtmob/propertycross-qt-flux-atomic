@@ -12,7 +12,9 @@ ApplicationWindow {
     width: 320
     height: 480
 
+    AppStore {}
     ModesStore {}
+    ApiStore {}
 
     DSM.StateMachine {
 

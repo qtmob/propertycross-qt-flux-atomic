@@ -4,5 +4,6 @@
         <file>pages/SearchResultsPage.qml</file>
         <file>pages/PropertyListingPage.qml</file>
         <file>pages/FavoritesPage.qml</file>
+        <file>templates/PropertySearchTpl.qml</file>
     </qresource>
 </RCC>
