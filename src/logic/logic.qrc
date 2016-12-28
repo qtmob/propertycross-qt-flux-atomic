@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/logic">
+        <file>actions/AppActions.qml</file>
+        <file>actions/qmldir</file>
+        <file>stores/ModesStore.qml</file>
+        <file>adapters/StoreTable.qml</file>
+        <file>adapters/qmldir</file>
+    </qresource>
+</RCC>

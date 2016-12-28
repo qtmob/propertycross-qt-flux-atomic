@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/ui">
+        <file>pages/PropertySearchPage.qml</file>
+        <file>pages/SearchResultsPage.qml</file>
+        <file>pages/PropertyListingPage.qml</file>
+        <file>pages/FavoritesPage.qml</file>
+    </qresource>
+</RCC>

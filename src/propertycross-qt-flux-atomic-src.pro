@@ -8,4 +8,6 @@ TARGET = propertycross-qt-flux-atomic
 SOURCES += main.cpp
 
 RESOURCES += \
-    qml.qrc
+    qml.qrc \
+    ui/ui.qrc \
+    logic/logic.qrc
