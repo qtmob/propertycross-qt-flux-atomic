@@ -20,7 +20,6 @@ QtObject {
         property var searchResults
 
         function searchListings(place_name, page) {
-            print(baseUrl+defaultParams)
             Http.request
             .get(baseUrl+defaultParams)
             .timeout(5000)
@@ -32,7 +31,6 @@ QtObject {
                   })
             .end(function (err, res) {
                 if (res.status === 200) {
-                    console.log(res.text);
                     var response_code = res.body.response.application_response_code;
                     if (["100","101","110"].indexOf(response_code) !== -1) {
                         AppActions.gotSearchResults(res.body.response.listings);

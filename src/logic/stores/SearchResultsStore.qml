@@ -13,8 +13,8 @@ QtObject {
     property Connections c1: Connections {
         target: AppActions
         onGotSearchResults: {
-            d.listingsModel.clear();
-            d.listingsModel.add(listings);
+            d.listingsModel.model.clear();
+            d.listingsModel.model.add(listings);
             AppActions.showSearchResults();
         }
     }
@@ -22,8 +22,10 @@ QtObject {
     property QtObject d: QtObject {
         id: d
 
-        readonly property JsonListModel listingsModel: JsonListModel {
-            idAttribute: "lister_url"
+        readonly property Collection listingsModel: Collection {
+            model: JsonListModel {
+                idAttribute: "lister_url"
+            }
         }
     }
 }
