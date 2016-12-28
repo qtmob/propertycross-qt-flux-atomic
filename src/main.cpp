@@ -1,9 +1,12 @@
-#include <QApplication>
-// add necessary includes here
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QGuiApplication app(argc, argv);
+    QQmlApplicationEngine engine;
 
-    return a.exec();
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+
+    return app.exec();
 }
