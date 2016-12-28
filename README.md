@@ -1,5 +1,5 @@
 # propertycross-qt-flux-atomic
-A Qt implementation of Property Cross leveraging Facebook's Flux and Brad Frost's Atomic Design concepts
+A Qt implementation of [Property Cross](http://propertycross.com/) leveraging Facebook's Flux and Brad Frost's Atomic Design concepts
 
 ## Setup
 Requires [qpm](http://qpm.io) and an internet connection.  
